@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AdUnit from "./component/AdUnit";
 
 const App = () => {
   const [password, setPassword] = useState("");
@@ -76,7 +77,9 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-gray-100 flex items-center justify-center px-4">
+    <div className="min-h-screen w-screen bg-gray-100 flex flex-col items-center justify-start px-4 pt-10 space-y-6">
+      
+      {/* Card */}
       <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-6 relative">
         <h1 className="text-2xl font-bold text-gray-900 text-center mb-2">
           Password Generator
@@ -169,9 +172,8 @@ const App = () => {
             Copy to Clipboard
           </button>
 
-          {/* Tooltip */}
           <span
-            className={`absolute bottom-17 right-3 mt-1 mr-2 text-sm bg-black text-white px-2 py-1 rounded transition-opacity duration-700 ${
+            className={`absolute top-0 right-0 mt-1 mr-2 text-sm bg-black text-white px-2 py-1 rounded transition-opacity duration-700 ${
               copied ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -186,6 +188,11 @@ const App = () => {
         >
           Generate Password
         </button>
+      </div>
+
+      {/* AdUnit under the card */}
+      <div className="w-full flex justify-center">
+        <AdUnit />
       </div>
     </div>
   );
